@@ -71,7 +71,7 @@ public class TofuMCAddon extends JavaPlugin implements SlimefunAddon {
                 null, null, null
         };
         SlimefunItem sfChunk = new SlimefunItem(category, chunkStack, RecipeType.COMPRESSOR, chunkToBit);
-        sfBit.setRecipeOutput(new SlimefunItemStack(chunkStack, 1));
+        sfChunk.setRecipeOutput(new SlimefunItemStack(chunkStack, 1));
         sfChunk.register(this);
 
         //Chaos Pearl *
