@@ -28,9 +28,15 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TofuMCAddon extends JavaPlugin implements SlimefunAddon {
+    private static TofuMCAddon instance;
+
+    public static TofuMCAddon getInstance() {
+        return instance;
+    }
 
     @Override
     public void onEnable() {
+        instance = this;
         //Category
         NamespacedKey categoryID = new NamespacedKey(this, "TofuMC");
         CustomItemStack categoryItem = new CustomItemStack(SkullUtil.getByBase64("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWU1YWFmOGYxZjhjZTg0MTlhM2Y1ZWFmODNmMmE1MWY1YTRlNThkNTc2NjRjM2VkYzFkNjI5NGZkZmY2NjBkOSJ9fX0="), "&4豆腐工艺");
