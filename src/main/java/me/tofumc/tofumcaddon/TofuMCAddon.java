@@ -1,17 +1,5 @@
 package me.tofumc.tofumcaddon;
 
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import me.tofumc.tofumcaddon.events.PhoenixDown;
-import me.tofumc.tofumcaddon.items.Antidote;
-import me.tofumc.tofumcaddon.items.ChaosPearl;
-import me.tofumc.tofumcaddon.items.FreshFlesh;
-import me.tofumc.tofumcaddon.items.MobIncapacitator;
-import me.tofumc.tofumcaddon.items.Quickdote;
 import org.bukkit.Color;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
@@ -26,6 +14,19 @@ import org.bukkit.inventory.meta.BlockStateMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import me.tofumc.tofumcaddon.events.PhoenixDown;
+import me.tofumc.tofumcaddon.items.Antidote;
+import me.tofumc.tofumcaddon.items.ChaosPearl;
+import me.tofumc.tofumcaddon.items.FreshFlesh;
+import me.tofumc.tofumcaddon.items.MobIncapacitator;
+import me.tofumc.tofumcaddon.items.Quickdote;
 
 public class TofuMCAddon extends JavaPlugin implements SlimefunAddon {
     private static TofuMCAddon instance;
@@ -70,7 +71,7 @@ public class TofuMCAddon extends JavaPlugin implements SlimefunAddon {
         //Chunk
         SlimefunItemStack chunkStack = new SlimefunItemStack("TOFUMC_CHUNK", Material.WHITE_CONCRETE, "§f§l豆腐块", "", "&7这么大块的豆腐肯定很好吃吧！");
         ItemStack[] chunkToBit = {
-                new SlimefunItemStack(bitStack, 1), null, null,
+                new SlimefunItemStack(bitStack, 9), null, null,
                 null, null, null,
                 null, null, null
         };
@@ -206,7 +207,7 @@ public class TofuMCAddon extends JavaPlugin implements SlimefunAddon {
                 null, null, null,
                 null, null, null
         };
-        SlimefunItem sfIonTube = new SlimefunItem(category, ionTubeStack, RecipeType.PRESSURE_CHAMBER, ionTubeRecipe);
+        SlimefunItem sfIonTube = new SlimefunItem(category, ionTubeStack, RecipeType.ENHANCED_CRAFTING_TABLE, ionTubeRecipe);
         sfIonTube.register(this);
 
         //Burnt Note
@@ -355,106 +356,106 @@ public class TofuMCAddon extends JavaPlugin implements SlimefunAddon {
         RecipeType.ENHANCED_CRAFTING_TABLE.register(bitToCoal, new ItemStack(Material.COAL, 8));
 
         //Bits to Chunk (and Vica Versa Recipes)
-        RecipeType.COMPRESSOR.register(new ItemStack[]{
-                null, new SlimefunItemStack(bitStack, 1), null,
-                null, null, null,
-                null, null, null}, new SlimefunItemStack(chunkStack, 1));
-        RecipeType.COMPRESSOR.register(new ItemStack[]{
-                null, null, new SlimefunItemStack(bitStack, 1),
-                null, null, null,
-                null, null, null}, new SlimefunItemStack(chunkStack, 1));
-        RecipeType.COMPRESSOR.register(new ItemStack[]{
-                null, null, null,
-                new SlimefunItemStack(bitStack, 1), null, null,
-                null, null, null}, new SlimefunItemStack(chunkStack, 1));
-        RecipeType.COMPRESSOR.register(new ItemStack[]{
-                null, null, null,
-                null, new SlimefunItemStack(bitStack, 1), null,
-                null, null, null}, new SlimefunItemStack(chunkStack, 1));
-        RecipeType.COMPRESSOR.register(new ItemStack[]{
-                null, null, null,
-                null, null, new SlimefunItemStack(bitStack, 1),
-                null, null, null}, new SlimefunItemStack(chunkStack, 1));
-        RecipeType.COMPRESSOR.register(new ItemStack[]{
-                null, null, null,
-                null, null, null,
-                new SlimefunItemStack(bitStack, 1), null, null}, new SlimefunItemStack(chunkStack, 1));
-        RecipeType.COMPRESSOR.register(new ItemStack[]{
-                null, null, null,
-                null, null, null,
-                null, new SlimefunItemStack(bitStack, 1), null}, new SlimefunItemStack(chunkStack, 1));
-        RecipeType.COMPRESSOR.register(new ItemStack[]{
-                null, null, null,
-                null, null, null,
-                null, null, new SlimefunItemStack(bitStack, 1)}, new SlimefunItemStack(chunkStack, 1));
+        // RecipeType.COMPRESSOR.register(new ItemStack[]{
+        //         null, new SlimefunItemStack(bitStack, 1), null,
+        //         null, null, null,
+        //         null, null, null}, new SlimefunItemStack(chunkStack, 1));
+        // RecipeType.COMPRESSOR.register(new ItemStack[]{
+        //         null, null, new SlimefunItemStack(bitStack, 1),
+        //         null, null, null,
+        //         null, null, null}, new SlimefunItemStack(chunkStack, 1));
+        // RecipeType.COMPRESSOR.register(new ItemStack[]{
+        //         null, null, null,
+        //         new SlimefunItemStack(bitStack, 1), null, null,
+        //         null, null, null}, new SlimefunItemStack(chunkStack, 1));
+        // RecipeType.COMPRESSOR.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, new SlimefunItemStack(bitStack, 1), null,
+        //         null, null, null}, new SlimefunItemStack(chunkStack, 1));
+        // RecipeType.COMPRESSOR.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, new SlimefunItemStack(bitStack, 1),
+        //         null, null, null}, new SlimefunItemStack(chunkStack, 1));
+        // RecipeType.COMPRESSOR.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, null,
+        //         new SlimefunItemStack(bitStack, 1), null, null}, new SlimefunItemStack(chunkStack, 1));
+        // RecipeType.COMPRESSOR.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, null,
+        //         null, new SlimefunItemStack(bitStack, 1), null}, new SlimefunItemStack(chunkStack, 1));
+        // RecipeType.COMPRESSOR.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, null,
+        //         null, null, new SlimefunItemStack(bitStack, 1)}, new SlimefunItemStack(chunkStack, 1));
 
 
-        RecipeType.GRIND_STONE.register(new ItemStack[]{
-                null, new SlimefunItemStack(chunkStack, 1), null,
-                null, null, null,
-                null, null, null}, new SlimefunItemStack(bitStack, 1));
-        RecipeType.GRIND_STONE.register(new ItemStack[]{
-                null, null, new SlimefunItemStack(chunkStack, 1),
-                null, null, null,
-                null, null, null}, new SlimefunItemStack(bitStack, 1));
-        RecipeType.GRIND_STONE.register(new ItemStack[]{
-                null, null, null,
-                new SlimefunItemStack(chunkStack, 1), null, null,
-                null, null, null}, new SlimefunItemStack(bitStack, 1));
-        RecipeType.GRIND_STONE.register(new ItemStack[]{
-                null, null, null,
-                null, new SlimefunItemStack(chunkStack, 1), null,
-                null, null, null}, new SlimefunItemStack(bitStack, 1));
-        RecipeType.GRIND_STONE.register(new ItemStack[]{
-                null, null, null,
-                null, null, new SlimefunItemStack(chunkStack, 1),
-                null, null, null}, new SlimefunItemStack(bitStack, 1));
-        RecipeType.GRIND_STONE.register(new ItemStack[]{
-                null, null, null,
-                null, null, null,
-                new SlimefunItemStack(chunkStack, 1), null, null}, new SlimefunItemStack(bitStack, 1));
-        RecipeType.GRIND_STONE.register(new ItemStack[]{
-                null, null, null,
-                null, null, null,
-                null, new SlimefunItemStack(chunkStack, 1), null}, new SlimefunItemStack(bitStack, 1));
-        RecipeType.GRIND_STONE.register(new ItemStack[]{
-                null, null, null,
-                null, null, null,
-                null, null, new SlimefunItemStack(chunkStack, 1)}, new SlimefunItemStack(bitStack, 1));
+        // RecipeType.GRIND_STONE.register(new ItemStack[]{
+        //         null, new SlimefunItemStack(chunkStack, 1), null,
+        //         null, null, null,
+        //         null, null, null}, new SlimefunItemStack(bitStack, 1));
+        // RecipeType.GRIND_STONE.register(new ItemStack[]{
+        //         null, null, new SlimefunItemStack(chunkStack, 1),
+        //         null, null, null,
+        //         null, null, null}, new SlimefunItemStack(bitStack, 1));
+        // RecipeType.GRIND_STONE.register(new ItemStack[]{
+        //         null, null, null,
+        //         new SlimefunItemStack(chunkStack, 1), null, null,
+        //         null, null, null}, new SlimefunItemStack(bitStack, 1));
+        // RecipeType.GRIND_STONE.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, new SlimefunItemStack(chunkStack, 1), null,
+        //         null, null, null}, new SlimefunItemStack(bitStack, 1));
+        // RecipeType.GRIND_STONE.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, new SlimefunItemStack(chunkStack, 1),
+        //         null, null, null}, new SlimefunItemStack(bitStack, 1));
+        // RecipeType.GRIND_STONE.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, null,
+        //         new SlimefunItemStack(chunkStack, 1), null, null}, new SlimefunItemStack(bitStack, 1));
+        // RecipeType.GRIND_STONE.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, null,
+        //         null, new SlimefunItemStack(chunkStack, 1), null}, new SlimefunItemStack(bitStack, 1));
+        // RecipeType.GRIND_STONE.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, null,
+        //         null, null, new SlimefunItemStack(chunkStack, 1)}, new SlimefunItemStack(bitStack, 1));
 
         //Antidote Recipes
-        RecipeType.JUICER.register(new ItemStack[]{
-                null, new ItemStack(Material.MILK_BUCKET), null,
-                null, null, null,
-                null, null, null}, new SlimefunItemStack(antidoteStack, 4));
-        RecipeType.JUICER.register(new ItemStack[]{
-                null, null, new ItemStack(Material.MILK_BUCKET),
-                null, null, null,
-                null, null, null}, new SlimefunItemStack(antidoteStack, 4));
-        RecipeType.JUICER.register(new ItemStack[]{
-                null, null, null,
-                new ItemStack(Material.MILK_BUCKET), null, null,
-                null, null, null}, new SlimefunItemStack(antidoteStack, 4));
-        RecipeType.JUICER.register(new ItemStack[]{
-                null, null, null,
-                null, new ItemStack(Material.MILK_BUCKET), null,
-                null, null, null}, new SlimefunItemStack(antidoteStack, 4));
-        RecipeType.JUICER.register(new ItemStack[]{
-                null, null, null,
-                null, null, new ItemStack(Material.MILK_BUCKET),
-                null, null, null}, new SlimefunItemStack(antidoteStack, 4));
-        RecipeType.JUICER.register(new ItemStack[]{
-                null, null, null,
-                null, null, null,
-                new ItemStack(Material.MILK_BUCKET), null, null}, new SlimefunItemStack(antidoteStack, 4));
-        RecipeType.JUICER.register(new ItemStack[]{
-                null, null, null,
-                null, null, null,
-                null, new ItemStack(Material.MILK_BUCKET), null}, new SlimefunItemStack(antidoteStack, 4));
-        RecipeType.JUICER.register(new ItemStack[]{
-                null, null, null,
-                null, null, null,
-                null, null, new ItemStack(Material.MILK_BUCKET)}, new SlimefunItemStack(antidoteStack, 4));
+        // RecipeType.JUICER.register(new ItemStack[]{
+        //         null, new ItemStack(Material.MILK_BUCKET), null,
+        //         null, null, null,
+        //         null, null, null}, new SlimefunItemStack(antidoteStack, 4));
+        // RecipeType.JUICER.register(new ItemStack[]{
+        //         null, null, new ItemStack(Material.MILK_BUCKET),
+        //         null, null, null,
+        //         null, null, null}, new SlimefunItemStack(antidoteStack, 4));
+        // RecipeType.JUICER.register(new ItemStack[]{
+        //         null, null, null,
+        //         new ItemStack(Material.MILK_BUCKET), null, null,
+        //         null, null, null}, new SlimefunItemStack(antidoteStack, 4));
+        // RecipeType.JUICER.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, new ItemStack(Material.MILK_BUCKET), null,
+        //         null, null, null}, new SlimefunItemStack(antidoteStack, 4));
+        // RecipeType.JUICER.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, new ItemStack(Material.MILK_BUCKET),
+        //         null, null, null}, new SlimefunItemStack(antidoteStack, 4));
+        // RecipeType.JUICER.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, null,
+        //         new ItemStack(Material.MILK_BUCKET), null, null}, new SlimefunItemStack(antidoteStack, 4));
+        // RecipeType.JUICER.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, null,
+        //         null, new ItemStack(Material.MILK_BUCKET), null}, new SlimefunItemStack(antidoteStack, 4));
+        // RecipeType.JUICER.register(new ItemStack[]{
+        //         null, null, null,
+        //         null, null, null,
+        //         null, null, new ItemStack(Material.MILK_BUCKET)}, new SlimefunItemStack(antidoteStack, 4));
 
 
     }
